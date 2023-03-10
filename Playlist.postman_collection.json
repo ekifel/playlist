@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "ab38d934-814c-4ddd-a1c7-ac2b673d5966",
+		"name": "Playlist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12399768"
+	},
+	"item": [
+		{
+			"name": "Get list of songs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/songs",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"songs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get list of songs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/songs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 12:53:47 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "403"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"songs\": [\n        {\n            \"id\": 1,\n            \"name\": \"Harry Styles - Watermelon Sugar\",\n            \"duration\": 188,\n            \"Next\": null,\n            \"Prev\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Rihanna - Desperado\",\n            \"duration\": 206,\n            \"Next\": null,\n            \"Prev\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Rihanna - Pour It Up\",\n            \"duration\": 196,\n            \"Next\": null,\n            \"Prev\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"QUOK - Concorde\",\n            \"duration\": 196,\n            \"Next\": null,\n            \"Prev\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Paramore - Decode\",\n            \"duration\": 261,\n            \"Next\": null,\n            \"Prev\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get song by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/songs/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"songs",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/songs/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"songs",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 12:54:34 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"songs\": [\n        {\n            \"id\": 1,\n            \"name\": \"Harry Styles - Watermelon Sugar\",\n            \"duration\": 188,\n            \"Next\": null,\n            \"Prev\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add new song",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Skrillex, Joker, & Sleepnet - Tears\",\n    \"duration\": 186\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/songs",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"songs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Skrillex, Joker, & Sleepnet - Tears\",\n    \"duration\": 186\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/songs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"songs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 12:56:25 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Song 'Skrillex, Joker, & Sleepnet - Tears' was added to playlist\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update existed song",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Harry Styles - Watermelon Sugar\",\n    \"duration\": 200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/songs/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"songs",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update existed song",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Harry Styles - Watermelon Sugar\",\n    \"duration\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/songs/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"songs",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 12:58:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Song was updated\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete song",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/songs/6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"songs",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete song",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/songs/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"songs",
+								"6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 12:59:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Play",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/play",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"play"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Play",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/play",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"play"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 13:00:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Music started to play\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Pause",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/pause",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pause"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Pause",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pause",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pause"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 13:00:55 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Music was stopped\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Next",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/next",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"next"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Next",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/next",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"next"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 13:01:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Current track switched to the next song\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Prev",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/prev",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"prev"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Prev",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/prev",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"prev"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Mar 2023 13:01:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Current track switched to the prev song\"\n}"
+				}
+			]
+		}
+	]
+}
